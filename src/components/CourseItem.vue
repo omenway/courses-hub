@@ -3,7 +3,7 @@
     <template #header>{{ title }}</template>
     <template #default>{{ price }}</template>
     <template #footer>
-      <!-- Footer content -->
+      <!-- Footer content xd -->
       <p class="mb-4">{{ description }}</p>
       <RoundedButton @click="$emit('click')"> Enroll Now </RoundedButton>
     </template>
