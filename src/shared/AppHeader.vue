@@ -20,7 +20,6 @@
 import { RouterLink } from "vue-router";
 import { useBookStore } from "@/stores/store";
 
-// Header reads cart length so the UI updates immediately after "Buy Now".
 const bookStore = useBookStore();
 </script>
 

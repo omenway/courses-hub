@@ -28,7 +28,6 @@ import { useBookStore } from "@/stores/store";
 
 import CartItem from "@/shared/CartItem.vue";
 
-// This page is purely a renderer: all cart logic lives in the Pinia store.
 const bookStore = useBookStore();
 </script>
 

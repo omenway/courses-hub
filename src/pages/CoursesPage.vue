@@ -16,6 +16,9 @@
                 :title="course.title"
                 :author="course.author"
                 :description="course.category"
+                :course-id="course._id"
+                :purchased="bookStore.isPurchased(course._id)"
+                :in-cart="bookStore.isInCart(course._id)"
                 @click="bookStore.addToCart(course)"
             />
         </div>
@@ -23,17 +26,11 @@
 </template>
 
 <script setup>
-import { onMounted } from "vue";
 import { useBookStore } from "@/stores/store";
-
 import BookCard from "@/components/BookCard.vue";
 import LoadingSpinner from "@/shared/LoadingSpinner.vue";
 
 const bookStore = useBookStore();
 
-onMounted(() => {
-    // Ensures `bookStore.courses` is fetched from the API before rendering cards.
-    bookStore.ensureCoursesLoaded();
-});
 </script>
 

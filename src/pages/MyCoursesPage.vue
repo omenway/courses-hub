@@ -30,7 +30,7 @@ import { useBookStore } from "@/stores/store";
 
 import MyCourseCard from "@/shared/MyCourseCard.vue";
 
-// "My Courses" is the persisted "owned" list.
+
 const bookStore = useBookStore();
 </script>
 

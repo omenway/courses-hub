@@ -13,5 +13,4 @@ pinia.use(piniaPluginPersistedstate)
 
 app.use(pinia)
 app.use(router)
-// Mount the Vue app after registering plugins.
 app.mount('#app')

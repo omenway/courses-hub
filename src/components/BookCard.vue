@@ -4,21 +4,54 @@
         <template #default>{{ author }}</template>
         <template #footer>
             <p class="mb-4">{{ description }}</p>
-            <RoundedButton @click="$emit('click')"> Buy Now </RoundedButton>
+            <div class="flex w-full gap-2">
+                <RoundedButton
+                    class="min-w-0 flex-1 font-comfortaa "
+                    :disabled="purchased || inCart"
+                    @click="$emit('click')"
+                >
+                    {{
+                        purchased
+                            ? "Already bought"
+                            : inCart
+                              ? "already in cart"
+                              : "Buy Now"
+                    }}
+                </RoundedButton>
+                <RouterLink
+                    v-if="courseId"
+                    :to="{ name: 'courseDetails', params: { courseId } }"
+                    class=" font-comfortaa inline-flex min-w-0 flex-1 items-center justify-center rounded-full border border-gray-300 bg-white px-3 py-1.5 text-center text-sm font-medium text-gray-800 shadow-sm transition-colors duration-200 hover:border-indigo-300 hover:bg-indigo-50 hover:text-indigo-900"
+                >
+                    Course details
+                </RouterLink>
+            </div>
         </template>
     </CardSections>
 </template>
 
 <script setup>
+import { RouterLink } from "vue-router";
+
 import CardSections from "./CardSections.vue";
 import RoundedButton from "./RoundedButton.vue";
 
-// This is a presentational component:
-// it renders UI and emits an event when the user clicks the button.
 defineProps({
     title: String,
     author: String,
     description: String,
+    courseId: {
+        type: String,
+        default: "",
+    },
+    purchased: {
+        type: Boolean,
+        default: false,
+    },
+    inCart: {
+        type: Boolean,
+        default: false,
+    },
 });
 defineEmits(["click"]);
 </script>
