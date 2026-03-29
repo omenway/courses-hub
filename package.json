@@ -11,7 +11,8 @@
         "lint:oxlint": "oxlint . --fix",
         "lint:eslint": "eslint . --fix --cache",
         "format": "prettier --write --experimental-cli src/",
-        "server": "json-server --watch db.json --delay=3000 --port 3001"
+        "server": "json-server --watch db.json --delay=3000 --port 3001",
+        "deploy": "gh-pages -d dist"
     },
     "dependencies": {
         "@tailwindcss/vite": "^4.2.1",
@@ -29,6 +30,7 @@
         "eslint-config-prettier": "^10.1.8",
         "eslint-plugin-oxlint": "~1.50.0",
         "eslint-plugin-vue": "~10.8.0",
+        "gh-pages": "^6.3.0",
         "globals": "^17.3.0",
         "json-server": "^0.17.4",
         "npm-run-all2": "^8.0.4",
